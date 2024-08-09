@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Stoxplay.com</title>
+  <style>
+    body {
+      background-color: #18072B;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: white;
+    }
+
+    nav {
+      padding: 1rem;
+      background-color: #18072B;
+      position: fixed;
+      top: 0;
+      text-align: right;
+      width: 97%;
+      z-index: 100;
+      
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      display: inline;
+      margin: 15px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #ffffff;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #da20af;
+    }
+
+    .image-container {
+      position: relative;
+      width: 100%;
+    }
+
+    .Fp {
+      width: 100%;
+      margin: 0;
+      border: none;
+      opacity: 0.5;
+    }
+
+    .logo {
+      position: absolute;
+      top: 550px; /* Adjust the position as needed */
+      left: 20px; /* Adjust the position as needed */
+      width: 330px; /* Adjust the size as needed */
+      height: auto;
+    }
+
+    .text-overlay {
+      position: absolute;
+      top: 55%;
+      left: 61%;
+      display: block;
+      width: 1100;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 3rem;
+      font-weight: 700;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+      text-align: right;
+      line-height: 1.3;
+    }
+
+    @keyframes Slide {
+      0% {
+        top: 0%;
+        opacity: 0.2 ;
+        left: 0px;
+      }
+      50% {
+        opacity: 0.8;
+        left: 5px;
+      }
+      100% {
+        opacity: 1;
+        text-align: center;
+      }
+    }
+
+    .Stoxplay {
+      color: rgb(252, 255, 255);
+      text-align: left;
+      font-size: 12rem;
+      font-weight: bold;
+      animation: Slide 3s 1;
+    }
+
+    .fpText {
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      margin-top: 42px;
+      text-align: center;
+      font-size: 30px;
+    }
+
+    .template-section {
+      margin: 2rem 0;
+      margin-top: 100px;
+    }
+
+    .template-container {
+
+      display: flex;
+      align-items: center;
+      border: 2.5px solid #5c0951;
+      background-color: #240B36;
+      padding: 2rem;
+      border-radius: 0.5rem;
+      margin: 0 auto;
+      max-width: 80%;
+    }
+
+    .template-image {
+      height: 20em;
+      margin-right: 2rem;
+      border-radius: 0.5rem;
+    }
+
+    .template-info {
+      text-align: left;
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .template-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .template-image {
+        margin: 0 0 2rem 0;
+      }
+    }
+
+    .Buttons {
+      text-align: center;
+      margin-top: 65px;
+      
+    }
+
+    .Download {
+      
+      margin-right: 5%;
+      height: 50px;
+      width: 175px;
+      font-size: 16px;
+      border-radius: 6px;
+      border: none;
+      font-weight: 700;
+      cursor: pointer;
+      transition: opacity 1s;
+    }
+    .Bgrid{
+      display: grid;
+      grid-template-columns: 30px 120px;
+      padding-top: 5px;
+
+    }
+    @keyframes waveframe{
+      0%{
+        transform: scale(1);
+        opacity: 0;
+      }
+      50%{
+        transform: scale(1.5);
+        opacity: 0.5;
+      }
+      100%{
+        transform: scale(1);
+        opacity: 0;
+      }
+    }
+
+    .coming {
+      position: relative;
+      margin-right: 5%;
+      height: 50px;
+      width: 175px;
+      font-size: 18px;
+      border-radius: 6px;
+      background-color: transparent;
+      color: white;
+      border-color: aqua;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background-color, color 1s;
+      
+    }
+    .wave{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0px;
+      left: 0px;
+      border-radius: 6px;
+      background: rgb(154, 36, 214);
+      animation: waveframe 3s 0s infinite;
+    }
+
+    .Download:hover{
+      opacity: 0.4;
+    }
+    .Download:active{
+      background-color: red;
+      
+    }
+    
+    .coming:hover{
+      background-color: aqua ;
+      color: #da20af;
+      
+    }
+
+    .founder-section {
+      margin: 4rem 0;
+      padding: 2rem;
+      background-color: #18072B;
+      color: white;
+    }
+
+    .founder-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 80%;
+      margin: 0 auto;
+      border: 2.5px solid #5c0951;
+      border-radius: 0.5rem;
+      padding: 2rem;
+    }
+
+    .founder-image {
+      height: 15em;
+      width: auto;
+      border-radius: 50%;
+      margin-right: 2rem;
+      border: 2px solid #5c0951;
+    }
+
+    .founder-info {
+      text-align: left;
+    }
+
+    .founder-info h2 {
+      margin-top: 0;
+      font-size: 2rem;
+      color: #da20af;
+    }
+
+    .founder-info p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .founder-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .founder-image {
+        margin: 0 0 1rem 0;
+        height: 10em;
+      }
+
+      .founder-info {
+        padding: 0;
+      }
+    }
+
+    .info-section {
+      display: inline-block;
+      width: 440px;
+      margin: 0rem;
+      text-align: center;
+    }
+
+    .info-section a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .image3{
+      padding-top: 50px;
+      text-align: center;
+      display: grid;
+      padding-left: 30px;
+      grid-template-columns: 500px 500px 500px;
+      
+    }
+
+    .images {
+      
+      height: 13em;
+      width: 13em;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .images:hover {
+      transform: scale(1.05);
+    }
+
+    .info-content {
+      text-align: left;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      line-height: 1.5;
+      width: 100%;
+      margin-top: 1rem;
+      color: white;
+    }
+
+    .info-content p {
+      margin: 0.5rem 0;
+    }
+
+    .read-the-docs {
+      color: #888;
+      margin-top: 2rem;
+    }
+
+    @keyframes rotateWordsSecond {
+      0% { opacity: 1; height: 100%; top: 27%; left: 95px; }
+      10% { opacity: 1; height: 100%; top: 32%; left: 95px; }
+      25% { opacity: 1; height: 100%; top: 35%; left: 95px; }
+      27% { opacity: 0; height: 100%; left: 95px; }
+      100% { opacity: 0; left: 95px; }
+    }
+
+    .rw-wrapper {
+      width: 80%;
+      position: relative;
+      font-family: 'Bree Serif';
+      padding: 10px;
+    }
+
+    .rw-sentence {
+      margin: 0;
+      text-align: center;
+      text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.8);
+    }
+
+    .rw-sentence span {
+      color: white;
+      white-space: nowrap;
+      font-size: 60%;
+      font-weight: normal;
+    }
+
+    .rw-words {
+      display: inline;
+      text-indent: 10px;
+    }
+
+    .rw-words span {
+      position: absolute;
+      left: 0;
+      opacity: 0;
+      overflow: hidden;
+      width: 100%;
+      color: yellow;
+    }
+
+    .rw-words-2 span {
+      margin: 0;
+      animation: rotateWordsSecond 9s linear infinite;
+    }
+
+    .rw-words span:nth-child(2) {
+      animation-delay: 3s;
+    }
+
+    .rw-words span:nth-child(3) {
+      animation-delay: 6s;
+    }
+
+    .rw-words span:nth-child(4) {
+      animation-delay: 9s;
+    }
+
+    .rw-words span:nth-child(5) {
+      animation-delay: 12s;
+    }
+
+    .rw-words span:nth-child(6) {
+      animation-delay: 15s;
+    }
+
+    .lastpage{
+
+      width: 100%;
+
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About Us</a></li>
+      <li><a href="/services">Our Services</a></li>
+      <li><a href="/features">Our Features</a></li>
+      <li><a href="/contact">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <div class="image-container">
+    <img class="Fp" src="frontpage.jpg" alt="Front Page Image">
+    <img class="logo" src="stoxplaylogo.png" alt="Logo">
+    <div class="text-overlay">
+      <div class="Stoxplay" style="font-style: italic;">STOXPLAY</div>
+      <div class="fpText" style="color: rgb(249, 255, 245);">
+        "Battleground for the Stock Market"
+      </div>
+      <div>
+        <section class="rw-wrapper">
+          <h2 class="rw-sentence">
+            <span>Let's</span>
+            <div class="rw-words rw-words-2">
+              <span>Learn!</span>
+              <span>Play!</span>
+              <span>Win!</span>
+              <span>Learn!</span>
+              <span>Play!</span>
+              <span>Win!</span>
+            </div>
+          </h2>
+        </section>
+      </div>
+      <div class="Buttons">
+        <button class="Download">
+          <div class="Bgrid">
+            <div>
+              <img src="appStoreIcon.png" width="30" height="30" >
+            </div>
+            <div>Download on
+              <strong>App Store</strong> 
+            </div>
+          </div>
+          
+        </button>
+        <button class="coming">COMING SOON <div class="wave"></div></button>
+        <button class="Download">
+          <div class="Bgrid">
+            <div><img class="GLogo" src="gpl.png" alt="Logo" width="30" height="30" ></div> 
+          <div>Download on 
+            <strong>Google Play</strong> </div>
+          </div>
+          </button>
+      </div>
+    </div>
+  </div>
+
+  <section class="template-section">
+    <div class="template-container">
+      <img src="brightEarth.jpeg" class="template-image" alt="Bright Earth Image">
+      <div class="template-info">
+        <h2>StoxPlay</h2>
+        <p>STOXPLAY is your ultimate destination for online gaming excitement and cutting-edge predictive analytics. We offer a diverse range of thrilling games and leverage advanced analytics to provide our users with unparalleled insights and predictions. Whether you're a casual gamer or an investor, STOXPLAY has you covered with engaging games and powerful predictive tools.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="image3">
+    <div class="info-section">
+      <a href="#" onclick="handleInfo('about')">
+        <img src="brain.jpeg" class="images" alt="Brain Image">
+        <p>About Us</p>
+      </a>
+      <div id="about-info" class="info-content" style="display: none;">
+        <p>StoxPlay:</p>
+        <p> Where Stock Market Expertise Meets Competitive Thrills!</p>
+        <p>StoxPlay introduces an innovative platform that combines stock trading with the excitement of competition. It merges strategy, intuition, and the opportunity to win significant rewards. Whether you are an experienced investor or a beginner, StoxPlay provides an exciting arena to showcase your skills and leave your mark in the finance world.</p>
+      </div>
+    </div>
+
+    <div class="info-section">
+      <a href="#" onclick="handleInfo('services')">
+        <img src="earth.jpeg" class="images" alt="Earth Image">
+        <p>Our Services</p>
+      </a>
+      <div id="services-info" class="info-content" style="display: none;">
+        <p>1. Comprehensive Market Analysis</p>
+        <p>We provide detailed market analysis to help you make informed trading decisions. Our expert team analyzes market trends, financial reports, and economic indicators to offer you the best insights.</p>
+        <p>2. Real-Time Stock Data</p>
+        <p>Stay up-to-date with the latest stock market data. Our platform offers real-time stock prices, charts, and news to keep you informed about the market movements.</p>
+        <p>3. Personalized Trading Strategies</p>
+        <p>Receive personalized trading strategies based on your risk tolerance and investment goals. Our platform uses advanced algorithms to recommend strategies that align with your preferences.</p>
+      </div>
+    </div>
+
+    <div class="info-section">
+      <a href="#" onclick="handleInfo('features')">
+        <img src="market.jpeg" class="images" alt="Market Image">
+        <p>Our Features</p>
+      </a>
+      <div id="features-info" class="info-content" style="display: none;">
+        <p>1. Discover the Thrill of Fantasy Gaming!</p>
+        <p>As the clock strikes 9 AM, the bustling market springs to life, offering a gateway into the thrilling world of gaming and stock markets. Embark on a journey where every heartbeat resonates with excitement and every decision holds the promise of amazing rewards.</p>
+        <p>2. Unlock Your Stock Market Skills!</p>
+        <p>Join us to develop and enhance your stock market skills. Our platform not only empowers you to apply your knowledge of stocks in a dynamic environment but also develops your financial market skills. Whether you're a novice eager to learn or a seasoned investor looking to sharpen your strategies, we provide the tools and opportunities to elevate your understanding and performance.</p>
+        <p>3. Welcome the Challenge!</p>
+        <p>Take part in this exhilarating adventure where learning meets rewards. Upgrade your potential and seize the opportunities that await you. Join us today and dive into a world where knowledge unlocks rewards and every trade is a step towards success.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="founder-section">
+    <div class="founder-container" >
+      <img src="Founder.jpeg" class="founder-image" alt="Founder Image">
+      <div class="founder-info">
+        <h2>Meet Our Founder</h2>
+        <p>Our founder, BHAVESH PARMAR, has a vision to revolutionize the stock market with innovative tools and engaging games. With a background in finance and technology, BHAVESH PARMAR brings a wealth of experience and passion to Stoxplay.</p>
+      </div>
+    </div>
+  </section>
+  
+  <section>
+    <img class="lastpage" src="lastpage.jpg" alt="Last Page">
+  </section>
+
+  <script>
+    // Function to show the info section when hovered
+      function showInfo(info) {
+        // Hide all sections initially
+        const sections = document.querySelectorAll('.info-content');
+        sections.forEach(section => section.style.display = 'none');
+
+        // Show the specific section
+        document.getElementById(`${info}-info`).style.display = 'inline';
+      }
+
+      // Function to hide the info section when mouse leaves
+      function hideInfo(info) {
+        document.getElementById(`${info}-info`).style.display = 'none';
+      }
+
+      // Adding event listeners to the elements
+      document.querySelectorAll('.info-section a').forEach(link => {
+        const info = link.getAttribute('onclick').match(/'(.*?)'/)[1];
+
+        // Show info on mouseenter
+        link.addEventListener('mouseenter', () => showInfo(info));
+
+        // Hide info on mouseleave
+        link.addEventListener('mouseleave', () => hideInfo(info));
+      });
+
+  </script>
+</body>
+</html>
